@@ -2,7 +2,7 @@ function ProductAddToCart({ product, productsCheckout, setProductsCheckout }) {
   return (
     <>
       <button
-        onClick={() => {
+        onClick={(e) => {
           if (productsCheckout.length === 0) {
             setProductsCheckout([
               {
@@ -25,6 +25,7 @@ function ProductAddToCart({ product, productsCheckout, setProductsCheckout }) {
             }
             findItem.cantidad_agregada = findItem.cantidad_agregada + 1 || 1;
             if (findItem.cantidad_agregada <= findItem.cantidad_disponible) {
+              e.currentTarget.disabled = false;
               const newProductsCheckout = productsCheckout.map((item) => {
                 if (item.id === product.id) {
                   return findItem;
@@ -32,6 +33,8 @@ function ProductAddToCart({ product, productsCheckout, setProductsCheckout }) {
                 return item;
               });
               setProductsCheckout(newProductsCheckout);
+            }else{
+              e.currentTarget.disabled = true;
             }
           }
         }}

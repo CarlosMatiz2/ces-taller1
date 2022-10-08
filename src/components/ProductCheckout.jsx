@@ -6,7 +6,7 @@ function ProductCheckout({ product, setProductsCheckout, productsCheckout }) {
         type="number"
         name="quantity"
         id="quantity"
-        min="1"
+        min="0"
         onChange={(e) => {
           product.cantidad_agregada = Number(e.target.value);
           const updateProductCheckout = productsCheckout.map((item) => {
