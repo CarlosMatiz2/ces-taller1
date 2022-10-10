@@ -2,6 +2,7 @@ function ProductAddToCart({ product, productsCheckout, setProductsCheckout }) {
   return (
     <>
       <button
+        className="button_add_card"
         onClick={(e) => {
           if (productsCheckout.length === 0) {
             setProductsCheckout([

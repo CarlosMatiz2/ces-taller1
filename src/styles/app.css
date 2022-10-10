@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+:root {
+  --primaryColor: #1A5276;
+  --secondaryColor: #6C3483;
+  --grey: #808B96;
+  --white: #fff;
+  --black: #17202A;
+  --ligthGrey: #e1e1e1;
+
+  --separation: 5rem;
+
+  --fontPrimary: 'Roboto', sans-serif;
+  --fontSecondary: 'Lato', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  font-family: var(--fontSecondary);
+}
+
+body {
+  font-family: var(--fontPrimary);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* Global */
+
+.container{
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1,h2,h3{
+  font-weight: 700;
+  font-family: var(--fontSecondary);
+}
+
+h1{
+  font-size: 4.1rem;
+}
+
+h2{
+  font: 3.4rem;
+}
+
+h3{
+  font-size: 2.5rem;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+/* Utilities */
+
+.text-center{
+  text-align: center;
+}
+
+.header{
+  background-color: var(--primaryColor);
+  max-width: 100%;
+  padding: 1.5rem 0;
+  color: var(--white);
+}
+
+.container_button_shop{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopping{
+  background-color: var(--white);
+  display: flex;
+  gap: 2rem;
+  padding: .7rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.shopping p{
+  color: var(--black);
+  font-weight: 700;
+}
+
+.list_products{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+.container_product_card{
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 2rem;
+  max-width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--secondaryColor)
+}
+
+.img_product_card{
+  border-radius: 1rem;
+}
+
+.button_add_card{
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  border: 2px solid var(--secondaryColor);
+  background-color: var(--secondaryColor);
+  font-weight: 700;
+  color: var(--white);
+  cursor: pointer;
+  transition: backgroundColor .8s, color .8s;
+}
+
+.button_add_card:hover{
+  background-color: transparent;
+  color: var(--secondaryColor);
+  border: 2px solid var(--secondaryColor);
+}
+
+/* Summary */
+.container_summary{
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}

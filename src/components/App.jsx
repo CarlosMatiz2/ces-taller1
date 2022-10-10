@@ -3,6 +3,7 @@ import ProductsData from "../data/products";
 import Checkout from "./Checkout";
 import Summary from "./Summary";
 import { useState, useEffect } from "react";
+import "../styles/app.css";
 
 function App() {
   const [productsCheckout, setProductsCheckout] = useState([]);
@@ -23,21 +24,40 @@ function App() {
 
   return (
     <>
-      <p>Falta por hacer: 1. Input de cupones 2. Hacerlo bonito</p>
-      <p>Total products: {totalProducts}</p>
-      <Summary summary={summary} />
-      <Checkout
-        setProductsCheckout={setProductsCheckout}
-        productsCheckout={productsCheckout}
-      />
-      {ProductsData.map((productData) => (
-        <ProductCard
-          key={productData.id}
-          product={productData}
-          productsCheckout={productsCheckout}
-          setProductsCheckout={setProductsCheckout}
-        />
-      ))}
+      <header className="header">
+        <div className="container_button_shop">
+          <h3>Taller 1</h3>
+          <div className="shopping">
+            <img src="https://img.icons8.com/material-outlined/24/6C3483/shopping-cart--v1.png"></img>
+            <p>{totalProducts} Products</p>
+          </div>
+        </div>
+      </header>
+
+      <main className="main">
+        <section className="container">
+          <div className="list_products">
+            {ProductsData.map((productData) => (
+              <ProductCard
+                key={productData.id}
+                product={productData}
+                productsCheckout={productsCheckout}
+                setProductsCheckout={setProductsCheckout}
+              />
+            ))}
+          </div>
+        </section>
+        <hr></hr>
+        <section className="container">
+          <div className="container_summary">
+            <Summary summary={summary} setSummary={setSummary} />
+            <Checkout
+              setProductsCheckout={setProductsCheckout}
+              productsCheckout={productsCheckout}
+            />
+          </div>
+        </section>
+      </main>
     </>
   );
 }
