@@ -8,7 +8,6 @@ function Summary({ summary, setSummary }) {
     } else {
       setCoupon(Number(target.value));
     }
-    handleBlur();
   };
 
   const handleBlur = () => {
