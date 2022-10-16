@@ -49,11 +49,11 @@ function App() {
         <hr></hr>
         <section className="container">
           <div className="container_summary">
-            <Summary summary={summary} setSummary={setSummary} />
             <Checkout
               setProductsCheckout={setProductsCheckout}
               productsCheckout={productsCheckout}
             />
+            <Summary summary={summary} setSummary={setSummary} />
           </div>
         </section>
       </main>

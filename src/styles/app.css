@@ -22,6 +22,7 @@ html {
 *{
   padding: 0;
   margin: 0;
+  outline: none;
 }
 
 *:before, *:after {
@@ -144,6 +145,63 @@ img{
 .container_summary{
   margin: 2rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 60% 1fr;
   width: 100%;
+  gap: 3rem;
+}
+
+.products_checkout{
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+.quantity_checkout{
+  max-width: 100%;
+  outline: none;
+  padding: .5rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--secondaryColor);
+  background-color: transparent;
+}
+
+/* COUPON */
+.enter_coupon{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: var(--grey) 1px solid;
+  border-top: var(--grey) 1px solid;
+}
+
+.container_total{
+  padding: 2rem 0;
+}
+
+.container_total{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-bottom: var(--grey) 1px solid;
+}
+
+.container_total > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.total_payable{
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.text-total{
+  font-weight: 600;
+}
+
+.input_coupon{
+  border: none;
 }
