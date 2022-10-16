@@ -8,10 +8,13 @@ function Summary({ summary, setSummary }) {
     } else {
       setCoupon(Number(target.value));
     }
+    handleBlur();
   };
 
-  const handleBur = () => {
-    setSummary(summary - coupon);
+  const handleBlur = () => {
+    if (summary - coupon >= 0) {
+      setSummary(summary - coupon);
+    }
   };
 
   return (
@@ -27,7 +30,7 @@ function Summary({ summary, setSummary }) {
           id="coupon"
           className="input_coupon"
           value={coupon}
-          onBlur={handleBur}
+          onBlur={handleBlur}
           onChange={handleChange}
         />
       </div>
@@ -46,8 +49,8 @@ function Summary({ summary, setSummary }) {
         </div>
       </section>
       <div className="total_payable">
-          <p className="text-total">TOTAL</p>
-          <p> {summary} </p>
+        <p className="text-total">TOTAL</p>
+        <p> {summary} </p>
       </div>
     </div>
   );
