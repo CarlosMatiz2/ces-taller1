@@ -8,10 +8,13 @@ function Summary({ summary, setSummary}) {
     }else{
       setCoupon(Number(target.value));
     }
+    handleBlur();
   }
 
-  const handleBur = () => {
-    setSummary(summary - coupon);
+  const handleBlur = () => {
+    if(summary - coupon >= 0){
+      setSummary(summary - coupon);
+    }
   }
 
   return (
@@ -20,7 +23,7 @@ function Summary({ summary, setSummary}) {
       <p>Subtotal: {summary}</p>
       <p>Shipping: FREE</p>
       <p>Coupon: </p>
-      <input type="number" name="coupon" min="0" max="100" id="coupon" value={coupon} onBlur={handleBur} onChange={handleChange} />
+      <input type="number" name="coupon" min="0" max="100" id="coupon" value={coupon} onBlur={handleBlur} onChange={handleChange} />
     </div>
   );
 }

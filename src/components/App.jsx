@@ -11,7 +11,6 @@ function App() {
   const [totalProducts, setTotalProducts] = useState(0);
 
   useEffect(() => {
-    console.log("Se agregó un producto al checkout");
     const total = productsCheckout.reduce((accumulator, value) => {
       return accumulator + value.precio * value.cantidad_agregada;
     }, 0);
