@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Summary({ summary, setSummary }) {
   const [coupon, setCoupon] = useState(0);
+  const [total, setTotal] = useState(summary);
   const handleChange = ({ target }) => {
     if (coupon > summary) {
       setCoupon(0);
@@ -12,7 +13,7 @@ function Summary({ summary, setSummary }) {
 
   const handleBlur = () => {
     if (summary - coupon >= 0) {
-      setSummary(summary - coupon);
+      setTotal(summary - coupon);
     }
   };
 
@@ -49,7 +50,7 @@ function Summary({ summary, setSummary }) {
       </section>
       <div className="total_payable">
         <p className="text-total">TOTAL</p>
-        <p> {summary} </p>
+        <p> {total} </p>
       </div>
     </div>
   );
