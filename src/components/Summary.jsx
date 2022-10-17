@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Summary({ summary, setSummary }) {
   const [coupon, setCoupon] = useState(0);
@@ -16,6 +16,10 @@ function Summary({ summary, setSummary }) {
       setTotal(summary - coupon);
     }
   };
+
+  useEffect(() => {
+    setTotal(summary - coupon);
+  }, [summary])
 
   return (
     <div>
